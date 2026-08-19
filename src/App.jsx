@@ -3,6 +3,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
+import CompanySection from './components/CompanySection';
 import Services from './components/Services';
 import BeforeAfter from './components/BeforeAfter';
 import Clients from './components/Clients';
@@ -15,6 +16,7 @@ function App() {
       <main id="main-content">
         <Hero />
         <Stats />
+        <CompanySection />
         <Services />
         <BeforeAfter />
         <Clients />

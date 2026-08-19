@@ -1,0 +1,210 @@
+/* ============================================
+   HERO STYLES — Background Image Full Banner
+   ============================================ */
+
+.hero {
+  min-height: 100vh;
+  padding-top: var(--nav-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ---- BACKGROUND IMAGE & OVERLAYS ---- */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero__bg-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  opacity: 0.45;
+  filter: saturate(1.1) contrast(1.05);
+  transition: opacity 0.35s ease, filter 0.35s ease;
+}
+
+[data-theme="dark"] .hero__bg-img {
+  opacity: 0.35;
+  filter: saturate(1.0) contrast(1.15) brightness(0.7);
+}
+
+.hero__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    var(--bg-primary) 0%,
+    rgba(255, 255, 255, 0.85) 45%,
+    rgba(255, 255, 255, 0.35) 75%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
+  transition: background 0.35s ease;
+}
+
+[data-theme="dark"] .hero__bg-overlay {
+  background: linear-gradient(
+    90deg,
+    var(--bg-primary) 0%,
+    rgba(13, 15, 20, 0.90) 45%,
+    rgba(13, 15, 20, 0.55) 75%,
+    rgba(13, 15, 20, 0.25) 100%
+  );
+}
+
+.hero__bg-dots {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.35;
+}
+
+/* Radial glows */
+.hero__bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+}
+.hero__bg-glow--1 {
+  width: 600px; height: 600px;
+  background: var(--hero-glow-1);
+  top: -150px; right: -100px;
+}
+.hero__bg-glow--2 {
+  width: 450px; height: 450px;
+  background: var(--hero-glow-2);
+  bottom: -100px; left: -100px;
+}
+
+/* ---- CONTAINER & CONTENT ---- */
+.hero__container {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  min-height: calc(100vh - var(--nav-height));
+  position: relative;
+  z-index: 1;
+}
+
+/* Text side */
+.hero__text {
+  max-width: 760px;
+}
+
+.hero__headline {
+  font-size: clamp(2.8rem, 5.2vw, 4.4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  transition: color 0.35s ease;
+}
+.hero__headline-blue {
+  color: var(--brand-blue);
+  position: relative;
+}
+.hero__headline-blue::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 2px;
+  width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--brand-blue), #60a5fa);
+  border-radius: 2px;
+  opacity: 0.4;
+}
+
+.hero__sub {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 620px;
+  margin-bottom: 40px;
+  transition: color 0.35s ease;
+}
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 44px;
+}
+
+.hero__cta {
+  font-size: 15px;
+  padding: 15px 34px;
+}
+
+/* Trust Badges */
+.hero__badges {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.hero__badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: color 0.35s ease;
+  background: rgba(255,255,255,0.4);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(6px);
+}
+
+[data-theme="dark"] .hero__badge {
+  background: rgba(255,255,255,0.05);
+}
+
+/* Scroll indicator */
+.hero__scroll-indicator {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px; height: 40px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 6px;
+  z-index: 2;
+}
+.hero__scroll-dot {
+  width: 4px; height: 8px;
+  background: var(--text-secondary);
+  border-radius: 2px;
+  animation: scrollBounce 1.8s ease-in-out infinite;
+}
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(10px); opacity: 0.4; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero__headline {
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
+  }
+  .hero__sub {
+    font-size: 16px;
+  }
+  .hero__scroll-indicator { display: none; }
+}

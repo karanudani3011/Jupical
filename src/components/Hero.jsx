@@ -1,107 +1,160 @@
+import HeroVisual from './HeroVisual';
 import './Hero.css';
-
-/* ---- Factory Background with Overlays & Tech Accents ---- */
-function HeroBackground() {
-  return (
-    <div className="hero__bg" aria-hidden="true">
-      {/* High-res Manufacturing Engineer Background Image */}
-      <div
-        className="hero__bg-img"
-        style={{ backgroundImage: `url('/hero_bg.png')` }}
-      />
-
-      {/* Dark/Light Gradient Overlay for crystal clear readability */}
-      <div className="hero__bg-overlay" />
-
-      {/* Subtle Dot Grid Pattern */}
-      <svg className="hero__bg-dots" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-        <defs>
-          <pattern id="dot-grid" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
-            <circle cx="1.5" cy="1.5" r="1.5" fill="var(--hero-dot-color)"/>
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#dot-grid)"/>
-      </svg>
-
-      {/* Glow Orbs */}
-      <div className="hero__bg-glow hero__bg-glow--1"/>
-      <div className="hero__bg-glow hero__bg-glow--2"/>
-    </div>
-  );
-}
 
 export default function Hero() {
   return (
-    <section className="hero section-white" id="hero" aria-label="Hero section">
-      <HeroBackground />
+    <section className="hero" id="hero" aria-label="Hero section">
+      {/* Clean soft gradient backdrop */}
+      <div className="hero__backdrop" aria-hidden="true">
+        <div className="hero__glow hero__glow--blue" />
+        <div className="hero__glow hero__glow--cyan" />
+        <div className="hero__grid-pattern" />
+      </div>
 
       <div className="container hero__container">
-        {/* Full Hero Text Content */}
-        <div className="hero__text">
-          <div className="eyebrow fade-in">🏭 Certified Odoo Gold Partner</div>
-
-          <h1 className="hero__headline fade-in fade-in-delay-1">
-            Certified Odoo ERP
-            <br />
-            Partner Helping
-            <br />
-            Manufacturers
-            <br />
-            <span className="hero__headline-blue">Automate Operations</span>
-            <br />
-            Globally.
-          </h1>
-
-          <p className="hero__sub fade-in fade-in-delay-2">
-            A certified Odoo ERP partner and specialist in Manufacturing, Construction,
-            and Finance, Jupical helps businesses across 32+ countries streamline
-            operations through expert Odoo implementation and custom development.
-          </p>
-
-          <div className="hero__actions fade-in fade-in-delay-3">
-            <a href="#contact" id="hero-cta-primary" className="btn-primary hero__cta">
-              Contact Us
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <div className="hero__grid">
+          {/* LEFT SIDE CONTENT */}
+          <div className="hero__left">
+            {/* Certification Badge */}
+            <div className="hero__eyebrow">
+              <svg className="hero__shield-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 1L2 3.5V7.5C2 11.2 4.6 14.6 8 15.5C11.4 14.6 14 11.2 14 7.5V3.5L8 1Z" stroke="#0075FF" strokeWidth="1.6" strokeLinejoin="round"/>
+                <path d="M5.5 7.5L7 9L10.5 5.5" stroke="#0075FF" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-            </a>
-            <a href="#case-studies" id="hero-cta-secondary" className="btn-secondary">
-              View Case Studies
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </a>
+              <span>CERTIFIED ODOO ERP PARTNER</span>
+            </div>
+
+            {/* Main Headline */}
+            <h1 className="hero__title">
+              Building Smarter
+              <br />
+              Operations.
+              <br />
+              Driving <span className="hero__title-highlight">Real Growth.</span>
+            </h1>
+
+            {/* Subtitle Description */}
+            <p className="hero__description">
+              Jupical helps manufacturers, construction, and finance businesses automate, integrate, and scale with expert Odoo ERP implementation and custom development.
+            </p>
+
+            {/* Action Buttons */}
+            <div className="hero__actions">
+              <a href="#solutions" className="hero__btn hero__btn--primary" id="hero-btn-explore">
+                <span>Explore Solutions</span>
+                <span className="hero__btn-icon">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+
+              <a href="#contact" className="hero__btn hero__btn--secondary" id="hero-btn-contact">
+                <span>Contact Us</span>
+                <span className="hero__btn-icon hero__btn-icon--outline">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+
+            {/* Trust Flags & Social Proof — ZERO OVERLAP FLEXBOX LAYOUT */}
+            <div className="hero__trust-wrapper">
+              <div className="hero__country-chips">
+                <span className="hero__country-chip"><span className="chip-flag">🇺🇸</span> USA</span>
+                <span className="hero__country-chip"><span className="chip-flag">🇮🇳</span> INDIA</span>
+                <span className="hero__country-chip"><span className="chip-flag">🇬🇧</span> UK</span>
+                <span className="hero__country-chip"><span className="chip-flag">🇦🇪</span> UAE</span>
+                <span className="hero__country-chip"><span className="chip-flag">🇨🇦</span> CANADA</span>
+              </div>
+              <div className="hero__trust-sub">
+                Trusted by <strong>5000+ Businesses</strong> across <strong>32+ Countries</strong>
+              </div>
+            </div>
           </div>
 
-          {/* Trust badges */}
-          <div className="hero__badges fade-in fade-in-delay-4">
-            <div className="hero__badge">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M8 1l1.8 3.6L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.2-.9L8 1z" fill="#0075FA"/>
-              </svg>
-              Odoo Gold Partner
-            </div>
-            <div className="hero__badge">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <circle cx="8" cy="8" r="7" stroke="#22c55e" strokeWidth="1.5"/>
-                <path d="M5 8l2 2 4-4" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              ISO-certified Processes
-            </div>
-            <div className="hero__badge">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M8 2C5 2 3 4 3 6c0 3.5 5 8 5 8s5-4.5 5-8c0-2-2-4-5-4z" stroke="#f59e0b" strokeWidth="1.5"/>
-                <circle cx="8" cy="6" r="1.5" fill="#f59e0b"/>
-              </svg>
-              32+ Countries Served
-            </div>
+          {/* RIGHT SIDE — INTERACTIVE 3D ODOO ERP ECOSYSTEM */}
+          <div className="hero__right">
+            <HeroVisual />
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="hero__scroll-indicator" aria-hidden="true">
-        <div className="hero__scroll-dot"/>
+      {/* TRUSTED BY LEADING MANUFACTURERS LOGOS BAR WITH 50PX EXTRA SPACING */}
+      <div className="hero__partners">
+        <div className="container">
+          <p className="hero__partners-label">TRUSTED BY LEADING MANUFACTURERS WORLDWIDE</p>
+          <div className="hero__partners-logos">
+            <div className="hero__partner-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#64748b"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              <span>TEXAS <small>QUALITY BUILT</small></span>
+            </div>
+            <div className="hero__partner-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#64748b"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8" stroke="#fff" strokeWidth="2"/></svg>
+              <span>SANSERA <small>ENGINEERING</small></span>
+            </div>
+            <div className="hero__partner-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#64748b"><polygon points="12 2 22 22 2 22"/></svg>
+              <span>AMT <small>ENGINEERING</small></span>
+            </div>
+            <div className="hero__partner-item">
+              <span>metalloid</span>
+            </div>
+            <div className="hero__partner-item">
+              <span>AIP<small>ABRO</small></span>
+            </div>
+            <div className="hero__partner-item">
+              <span>SHIVAM <small>AUTOTECH</small></span>
+            </div>
+            <div className="hero__partner-more">and more...</div>
+          </div>
+        </div>
+      </div>
+
+      {/* STATISTICS CARDS BAR AT BOTTOM */}
+      <div className="hero__stats-bar">
+        <div className="container hero__stats-container">
+          <div className="hero__stat-card">
+            <div className="hero__stat-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0075FF" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div className="hero__stat-content">
+              <div className="hero__stat-number">32+</div>
+              <div className="hero__stat-label">Countries Served</div>
+            </div>
+          </div>
+
+          <div className="hero__stat-card">
+            <div className="hero__stat-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0075FF" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div className="hero__stat-content">
+              <div className="hero__stat-number">5000+</div>
+              <div className="hero__stat-label">Happy Clients</div>
+            </div>
+          </div>
+
+          <div className="hero__stat-card">
+            <div className="hero__stat-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0075FF" strokeWidth="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <div className="hero__stat-content">
+              <div className="hero__stat-number">1000+</div>
+              <div className="hero__stat-label">Successful Implementations</div>
+            </div>
+          </div>
+
+          <div className="hero__stat-card">
+            <div className="hero__stat-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0075FF" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div className="hero__stat-content">
+              <div className="hero__stat-number">98%</div>
+              <div className="hero__stat-label">Client Retention Rate</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

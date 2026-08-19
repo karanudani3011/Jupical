@@ -97,6 +97,11 @@
 /* ---- Reset & Base ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
+/* ---- Global Smooth Theme Transition ---- */
+html, body, header, section, main, footer, nav, .navbar, .company-section, .hero, .services, .stats, .ba, .clients, .navbar__dropdown {
+  transition: background-color 250ms cubic-bezier(0.16, 1, 0.3, 1), color 250ms cubic-bezier(0.16, 1, 0.3, 1), border-color 250ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 body {
   font-family: var(--font-body);
   color: var(--text-primary);
@@ -104,7 +109,6 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: var(--transition-theme);
 }
 img, svg { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; }

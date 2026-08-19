@@ -474,3 +474,64 @@
 [data-theme="dark"] .hero__trust-sub strong {
   color: #F8FAFC;
 }
+
+/* Partners & Trusted Manufacturers Section Dark Mode */
+[data-theme="dark"] .hero__partners {
+  background: var(--bg-primary, #0D0F14);
+  border-top-color: rgba(255, 255, 255, 0.08);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .hero__partners-label {
+  color: #38BDF8;
+}
+
+[data-theme="dark"] .hero__partner-item {
+  color: #E2E8F0;
+  opacity: 0.85;
+}
+
+[data-theme="dark"] .hero__partner-item:hover {
+  opacity: 1;
+}
+
+[data-theme="dark"] .hero__partner-item svg {
+  fill: #94A3B8;
+}
+
+[data-theme="dark"] .hero__partner-item small {
+  color: #94A3B8;
+}
+
+[data-theme="dark"] .hero__partner-more {
+  color: #94A3B8;
+}
+
+/* Hero Stats Bar Dark Mode */
+[data-theme="dark"] .hero__stats-bar {
+  background: #111520;
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .hero__stat-card {
+  background: #1A1E29;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .hero__stat-card:hover {
+  border-color: rgba(0, 117, 255, 0.4);
+  box-shadow: 0 10px 25px rgba(0, 117, 255, 0.25);
+}
+
+[data-theme="dark"] .hero__stat-icon {
+  background: rgba(0, 117, 255, 0.18);
+}
+
+[data-theme="dark"] .hero__stat-number {
+  color: #F8FAFC;
+}
+
+[data-theme="dark"] .hero__stat-label {
+  color: #94A3B8;
+}

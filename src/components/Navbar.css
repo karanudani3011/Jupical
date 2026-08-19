@@ -1297,13 +1297,17 @@
   color: #F8FAFC;
 }
 
-[data-theme="dark"] .navbar__nav-link {
-  color: #94A3B8;
+[data-theme="dark"] .navbar__link {
+  color: #E2E8F0;
 }
 
-[data-theme="dark"] .navbar__nav-link:hover,
-[data-theme="dark"] .navbar__nav-link--active {
+[data-theme="dark"] .navbar__link:hover,
+[data-theme="dark"] .navbar__link--active {
   color: #0075FF;
+}
+
+[data-theme="dark"] .navbar__chevron {
+  color: #94A3B8;
 }
 
 [data-theme="dark"] .navbar__theme-toggle {

@@ -39,8 +39,8 @@ export default function Clients() {
       <div className="container clients__header-container">
         {/* Header */}
         <div className="clients__header">
-          <div className="eyebrow-pill">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0075FA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <div className="eyebrow-pill clients__eyebrow-pill">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0075FA" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
               <circle cx="9" cy="7" r="4" />
               <path d="M23 21v-2a4 4 0 0 0-3-3.87" />

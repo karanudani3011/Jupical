@@ -15,7 +15,7 @@ const LANGUAGES = [
     flag: '🇦🇪',
     lat: 23.8859,
     lng: 45.0792,
-    url: 'https://www.jupical.io/ar/our-clients',
+    url: 'https://www.jupical.io/ar',
   },
   {
     id: 'cs',
@@ -24,7 +24,7 @@ const LANGUAGES = [
     flag: '🇨🇿',
     lat: 49.8175,
     lng: 15.473,
-    url: 'https://www.jupical.io/cs_CZ/our-clients',
+    url: 'https://www.jupical.io/cs_CZ',
   },
   {
     id: 'da',
@@ -33,7 +33,7 @@ const LANGUAGES = [
     flag: '🇩🇰',
     lat: 56.2639,
     lng: 9.5018,
-    url: 'https://www.jupical.io/da_DK/our-clients',
+    url: 'https://www.jupical.io/da_DK',
   },
   {
     id: 'nl',
@@ -42,7 +42,7 @@ const LANGUAGES = [
     flag: '🇳🇱',
     lat: 52.1326,
     lng: 5.2913,
-    url: 'https://www.jupical.io/nl/our-clients',
+    url: 'https://www.jupical.io/nl',
   },
   {
     id: 'en_IN',
@@ -51,7 +51,7 @@ const LANGUAGES = [
     flag: '🇮🇳',
     lat: 20.5937,
     lng: 78.9629,
-    url: 'https://www.jupical.io/en_IN/our-clients',
+    url: 'https://www.jupical.io/en_IN',
   },
   {
     id: 'en_US',
@@ -69,7 +69,7 @@ const LANGUAGES = [
     flag: '🇫🇷',
     lat: 46.2276,
     lng: 2.2137,
-    url: 'https://www.jupical.io/fr/our-clients',
+    url: 'https://www.jupical.io/fr',
   },
   {
     id: 'de',
@@ -78,7 +78,7 @@ const LANGUAGES = [
     flag: '🇩🇪',
     lat: 51.1657,
     lng: 10.4515,
-    url: 'https://www.jupical.io/de/our-clients',
+    url: 'https://www.jupical.io/de',
   },
   {
     id: 'el',
@@ -87,7 +87,7 @@ const LANGUAGES = [
     flag: '🇬🇷',
     lat: 39.0742,
     lng: 21.8243,
-    url: 'https://www.jupical.io/el_GR/our-clients',
+    url: 'https://www.jupical.io/el_GR',
   },
   {
     id: 'hu',
@@ -96,7 +96,7 @@ const LANGUAGES = [
     flag: '🇭🇺',
     lat: 47.1625,
     lng: 19.5033,
-    url: 'https://www.jupical.io/hu/our-clients',
+    url: 'https://www.jupical.io/hu',
   },
   {
     id: 'it',
@@ -105,7 +105,7 @@ const LANGUAGES = [
     flag: '🇮🇹',
     lat: 41.8719,
     lng: 12.5674,
-    url: 'https://www.jupical.io/it/our-clients',
+    url: 'https://www.jupical.io/it',
   },
   {
     id: 'ja',
@@ -114,7 +114,7 @@ const LANGUAGES = [
     flag: '🇯🇵',
     lat: 36.2048,
     lng: 138.2529,
-    url: 'https://www.jupical.io/ja/our-clients',
+    url: 'https://www.jupical.io/ja',
   },
   {
     id: 'ko',
@@ -123,7 +123,7 @@ const LANGUAGES = [
     flag: '🇰🇷',
     lat: 37.6639,
     lng: 127.9785,
-    url: 'https://www.jupical.io/ko_KP/our-clients',
+    url: 'https://www.jupical.io/ko_KP',
   },
   {
     id: 'nb',
@@ -132,7 +132,7 @@ const LANGUAGES = [
     flag: '🇳🇴',
     lat: 60.472,
     lng: 8.4689,
-    url: 'https://www.jupical.io/nb_NO/our-clients',
+    url: 'https://www.jupical.io/nb_NO',
   },
   {
     id: 'ro',
@@ -141,7 +141,7 @@ const LANGUAGES = [
     flag: '🇷🇴',
     lat: 45.9432,
     lng: 24.9668,
-    url: 'https://www.jupical.io/ro/our-clients',
+    url: 'https://www.jupical.io/ro',
   },
   {
     id: 'sv',
@@ -150,7 +150,7 @@ const LANGUAGES = [
     flag: '🇸🇪',
     lat: 60.1282,
     lng: 18.6435,
-    url: 'https://www.jupical.io/sv/our-clients',
+    url: 'https://www.jupical.io/sv',
   },
 ];
 
@@ -668,9 +668,8 @@ export default function GlobalEarthSection() {
             <g key={`line-${pos.id}`}>
               <path
                 d={`M ${pos.x} ${pos.y} Q ${controlX} ${controlY} ${cardX} ${cardY}`}
-                className={`earth-connection-line ${isHovered ? 'line--hovered' : ''} ${
-                  isActive ? 'line--active' : ''
-                }`}
+                className={`earth-connection-line ${isHovered ? 'line--hovered' : ''} ${isActive ? 'line--active' : ''
+                  }`}
               />
               <circle
                 cx={pos.x}
@@ -699,9 +698,8 @@ export default function GlobalEarthSection() {
             <div
               key={lang.id}
               id={`lang-card-${lang.id}`}
-              className={`glass-lang-card ${isHovered ? 'card--hovered' : ''} ${
-                isActive ? 'card--active' : ''
-              }`}
+              className={`glass-lang-card ${isHovered ? 'card--hovered' : ''} ${isActive ? 'card--active' : ''
+                }`}
               style={{
                 animationDelay: `${index * 0.08}s`,
               }}

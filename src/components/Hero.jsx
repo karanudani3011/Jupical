@@ -85,50 +85,6 @@ export default function Hero() {
       {/* OUR CLIENTS SHOWCASE — PLACED RIGHT NEXT TO / BELOW THE HERO DASHBOARD */}
       <Clients />
 
-      {/* STATISTICS CARDS BAR AT BOTTOM */}
-      <div className="hero__stats-bar">
-        <div className="container hero__stats-container">
-          <div className="hero__stat-card">
-            <div className="hero__stat-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0075FF" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
-            </div>
-            <div className="hero__stat-content">
-              <div className="hero__stat-number">32+</div>
-              <div className="hero__stat-label">Countries Served</div>
-            </div>
-          </div>
-
-          <div className="hero__stat-card">
-            <div className="hero__stat-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0075FF" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
-            </div>
-            <div className="hero__stat-content">
-              <div className="hero__stat-number">5000+</div>
-              <div className="hero__stat-label">Happy Clients</div>
-            </div>
-          </div>
-
-          <div className="hero__stat-card">
-            <div className="hero__stat-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0075FF" strokeWidth="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" /></svg>
-            </div>
-            <div className="hero__stat-content">
-              <div className="hero__stat-number">1000+</div>
-              <div className="hero__stat-label">Successful Implementations</div>
-            </div>
-          </div>
-
-          <div className="hero__stat-card">
-            <div className="hero__stat-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0075FF" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
-            </div>
-            <div className="hero__stat-content">
-              <div className="hero__stat-number">98%</div>
-              <div className="hero__stat-label">Client Retention Rate</div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   );
 }

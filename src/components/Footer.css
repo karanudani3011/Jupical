@@ -112,27 +112,18 @@
 
 /* Brand column */
 .footer__logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
   margin-bottom: 16px;
 }
 .footer__logo-img {
-  height: 28px;
+  height: 44px;
   width: auto;
   object-fit: contain;
-  margin-right: 4px;
-}
-.footer__logo-text {
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--brand-blue);
-  letter-spacing: 0.02em;
-}
-.footer__logo-dot {
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--brand-blue);
+  background: #ffffff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .footer__brand-desc {

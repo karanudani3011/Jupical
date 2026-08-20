@@ -725,8 +725,6 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#" className="navbar__logo" id="nav-logo">
           <img src="/jupical-logo.png" alt="Jupical Technologies Logo" className="navbar__logo-img" />
-          <span className="navbar__logo-text">JUPICAL</span>
-          <span className="navbar__logo-dot">.</span>
         </a>
 
         {/* Desktop Nav Links */}

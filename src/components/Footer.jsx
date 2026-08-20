@@ -119,7 +119,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="footer__brand">
             <div className="footer__logo">
-              <img src="/jupical-logo.png" alt="Jupical Technologies Logo" className="footer__logo-img" />
+              <img src="/footer-logo.png" alt="Jupical Technologies Logo" className="footer__logo-img" />
             </div>
             <p className="footer__brand-desc">
               Certified Odoo ERP Partner headquartered in Rajkot, India.

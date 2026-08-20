@@ -1,4 +1,5 @@
 import HeroVisual from './HeroVisual';
+import Clients from './Clients';
 import './Hero.css';
 
 export default function Hero() {
@@ -18,8 +19,8 @@ export default function Hero() {
             {/* Certification Badge */}
             <div className="hero__eyebrow">
               <svg className="hero__shield-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M8 1L2 3.5V7.5C2 11.2 4.6 14.6 8 15.5C11.4 14.6 14 11.2 14 7.5V3.5L8 1Z" stroke="#0075FF" strokeWidth="1.6" strokeLinejoin="round"/>
-                <path d="M5.5 7.5L7 9L10.5 5.5" stroke="#0075FF" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M8 1L2 3.5V7.5C2 11.2 4.6 14.6 8 15.5C11.4 14.6 14 11.2 14 7.5V3.5L8 1Z" stroke="#0075FF" strokeWidth="1.6" strokeLinejoin="round" />
+                <path d="M5.5 7.5L7 9L10.5 5.5" stroke="#0075FF" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               <span>CERTIFIED ODOO ERP PARTNER</span>
             </div>
@@ -44,7 +45,7 @@ export default function Hero() {
                 <span>Explore Solutions</span>
                 <span className="hero__btn-icon">
                   <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
               </a>
@@ -53,13 +54,13 @@ export default function Hero() {
                 <span>Contact Us</span>
                 <span className="hero__btn-icon hero__btn-icon--outline">
                   <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
               </a>
             </div>
 
-            {/* Trust Flags & Social Proof — ZERO OVERLAP FLEXBOX LAYOUT */}
+            {/* Trust Flags & Social Proof */}
             <div className="hero__trust-wrapper">
               <div className="hero__country-chips">
                 <span className="hero__country-chip"><span className="chip-flag">🇺🇸</span> USA</span>
@@ -74,50 +75,22 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* RIGHT SIDE — INTERACTIVE 3D ODOO ERP ECOSYSTEM */}
+          {/* RIGHT SIDE — INTERACTIVE 3D ODOO ERP ECOSYSTEM / DASHBOARD */}
           <div className="hero__right">
             <HeroVisual />
           </div>
         </div>
       </div>
 
-      {/* TRUSTED BY LEADING MANUFACTURERS LOGOS BAR WITH 50PX EXTRA SPACING */}
-      <div className="hero__partners">
-        <div className="container">
-          <p className="hero__partners-label">TRUSTED BY LEADING MANUFACTURERS WORLDWIDE</p>
-          <div className="hero__partners-logos">
-            <div className="hero__partner-item">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="#64748b"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              <span>TEXAS <small>QUALITY BUILT</small></span>
-            </div>
-            <div className="hero__partner-item">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="#64748b"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8" stroke="#fff" strokeWidth="2"/></svg>
-              <span>SANSERA <small>ENGINEERING</small></span>
-            </div>
-            <div className="hero__partner-item">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="#64748b"><polygon points="12 2 22 22 2 22"/></svg>
-              <span>AMT <small>ENGINEERING</small></span>
-            </div>
-            <div className="hero__partner-item">
-              <span>metalloid</span>
-            </div>
-            <div className="hero__partner-item">
-              <span>AIP<small>ABRO</small></span>
-            </div>
-            <div className="hero__partner-item">
-              <span>SHIVAM <small>AUTOTECH</small></span>
-            </div>
-            <div className="hero__partner-more">and more...</div>
-          </div>
-        </div>
-      </div>
+      {/* OUR CLIENTS SHOWCASE — PLACED RIGHT NEXT TO / BELOW THE HERO DASHBOARD */}
+      <Clients />
 
       {/* STATISTICS CARDS BAR AT BOTTOM */}
       <div className="hero__stats-bar">
         <div className="container hero__stats-container">
           <div className="hero__stat-card">
             <div className="hero__stat-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0075FF" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0075FF" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
             </div>
             <div className="hero__stat-content">
               <div className="hero__stat-number">32+</div>
@@ -127,7 +100,7 @@ export default function Hero() {
 
           <div className="hero__stat-card">
             <div className="hero__stat-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0075FF" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0075FF" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
             </div>
             <div className="hero__stat-content">
               <div className="hero__stat-number">5000+</div>
@@ -137,7 +110,7 @@ export default function Hero() {
 
           <div className="hero__stat-card">
             <div className="hero__stat-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0075FF" strokeWidth="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0075FF" strokeWidth="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" /></svg>
             </div>
             <div className="hero__stat-content">
               <div className="hero__stat-number">1000+</div>
@@ -147,7 +120,7 @@ export default function Hero() {
 
           <div className="hero__stat-card">
             <div className="hero__stat-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0075FF" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0075FF" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
             </div>
             <div className="hero__stat-content">
               <div className="hero__stat-number">98%</div>

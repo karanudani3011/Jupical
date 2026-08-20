@@ -1,176 +1,296 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './Services.css';
 
 const services = [
   {
-    letter: 'A',
-    label: 'Implementation',
-    title: 'End-to-End Odoo Implementation',
-    desc: 'Full-cycle ERP deployment tailored to your manufacturing workflows — from gap analysis and configuration to go-live and hypercare. We\'ve implemented Odoo for 100+ manufacturers across 32 countries.',
-    tags: ['Manufacturing', 'Finance', 'Inventory'],
-    bullets: [
-      'Business process mapping & gap analysis',
-      'Module configuration and data setup',
-      'User acceptance testing (UAT)',
-      'Go-live support and hypercare period',
-      'Post-implementation performance audit',
-    ],
+    id: 1,
+    index: '01 / 12',
+    title: 'Implementation',
+    desc: 'End-to-end Odoo ERP implementation tailored to your business requirements and goals.',
+    tags: 'STRATEGY • CONFIGURATION • DEPLOYMENT',
+    icon: '/services/implementation.png',
   },
   {
-    letter: 'B',
-    label: 'Customisation',
-    title: 'Bespoke Odoo Customisation',
-    desc: 'When standard Odoo isn\'t enough, our developers build custom modules, fields, reports, and workflows that match your exact operational requirements without breaking upgrade paths.',
-    tags: ['Custom Modules', 'Workflows', 'Reports'],
-    bullets: [
-      'Custom module development in Python/OWL',
-      'Advanced reporting with QWeb & Jasper',
-      'Automated workflow and approval engine',
-      'Mobile-first UI customisation',
-      'Performance-optimised database queries',
-    ],
+    id: 2,
+    index: '02 / 12',
+    title: 'Customisation',
+    desc: 'Custom modules, workflows, and reports built to match your unique processes.',
+    tags: 'MODULES • WORKFLOWS • REPORTS',
+    icon: '/services/customisation.png',
   },
   {
-    letter: 'C',
-    label: 'Integration',
-    title: 'Seamless System Integration',
-    desc: 'Connect Odoo with your existing ecosystem — Shopify, WooCommerce, QuickBooks, Xero, BambooHR, payment gateways, IoT sensors, and custom APIs — for a single source of truth.',
-    tags: ['E-Commerce', 'Accounting', 'IoT'],
-    bullets: [
-      'REST & JSON-RPC API connectors',
-      'E-commerce platform sync (Shopify, WooCommerce)',
-      'Accounting integrations (QuickBooks, Xero, Zoho)',
-      'HR system bridges (BambooHR, Gusto)',
-      'Real-time webhook & event-driven pipelines',
-    ],
+    id: 3,
+    index: '03 / 12',
+    title: 'Product Development',
+    desc: 'Building scalable, custom Odoo applications and SaaS products from scratch.',
+    tags: 'APPS • SAAS • SCALABILITY',
+    icon: '/services/product_dev.png',
   },
   {
-    letter: 'D',
-    label: 'Migration',
-    title: 'Safe Odoo Version Migration',
-    desc: 'Upgrade from legacy Odoo versions (v8–v16) to the latest release without data loss, downtime, or broken customisations. Our structured migration process is battle-tested across 60+ projects.',
-    tags: ['Data Migration', 'Code Migration', 'Upgrade'],
-    bullets: [
-      'Version gap analysis and risk assessment',
-      'Automated data migration scripts',
-      'Custom module porting and rewriting',
-      'Zero-downtime cutover strategy',
-      'Full regression testing and sign-off',
-    ],
+    id: 4,
+    index: '04 / 12',
+    title: 'Dedicated',
+    desc: 'Experienced Odoo developers working directly as an extension of your internal team.',
+    tags: 'TEAM • FULL-TIME • EXPERT',
+    icon: '/services/dedicated.png',
   },
   {
-    letter: 'E',
-    label: 'Support',
-    title: 'On-Demand Odoo Support',
-    desc: 'SLA-backed functional and technical support with a dedicated account manager. Bug fixes, performance tuning, security patches, and training updates — all under one retainer.',
-    tags: ['SLA', 'Bug Fixes', 'Maintenance'],
-    bullets: [
-      'Tiered SLA with 4-hour critical response',
-      'Dedicated Odoo consultant per account',
-      'Monthly performance and security reports',
-      'Proactive module update management',
-      'Helpdesk via Odoo, Slack, or email',
-    ],
+    id: 5,
+    index: '05 / 12',
+    title: 'Integration',
+    desc: 'Seamlessly connecting Odoo with third-party software, APIs, and payment gateways.',
+    tags: 'API • THIRD-PARTY • SYNC',
+    icon: '/services/integration.png',
   },
   {
-    letter: 'F',
-    label: 'Training',
-    title: 'Odoo User & Admin Training',
-    desc: 'Role-based training programs for end-users, super-users, and IT administrators. Available online or on-site, with custom course material and recorded sessions for future onboarding.',
-    tags: ['End-Users', 'Administrators', 'Online'],
-    bullets: [
-      'Role-based training curriculum design',
-      'Live virtual and on-site sessions',
-      'Custom video library for your Odoo instance',
-      'Train-the-trainer programs for scale',
-      'Ongoing knowledge base and documentation',
-    ],
+    id: 6,
+    index: '06 / 12',
+    title: 'On Demand',
+    desc: 'Flexible, on-demand technical and functional assistance whenever you need it.',
+    tags: 'FLEXIBLE • SLA • ON-DEMAND',
+    icon: '/services/ondemand.png',
+  },
+  {
+    id: 7,
+    index: '07 / 12',
+    title: 'Training',
+    desc: 'Empowering your staff with comprehensive Odoo user and administrator training.',
+    tags: 'USER • ADMIN • HANDS-ON',
+    icon: '/services/training.png',
+  },
+  {
+    id: 8,
+    index: '08 / 12',
+    title: 'Support',
+    desc: 'Round-the-clock maintenance, bug fixes, and system monitoring for peak uptime.',
+    tags: '24/7 • MAINTENANCE • HELP',
+    icon: '/services/support.png',
+  },
+  {
+    id: 9,
+    index: '09 / 12',
+    title: 'System Optimisation',
+    desc: 'Fine-tuning database performance, query speeds, and overall system efficiency.',
+    tags: 'PERFORMANCE • SPEED • QUERIES',
+    icon: '/services/system_opt.png',
+  },
+  {
+    id: 10,
+    index: '10 / 12',
+    title: 'Code Migration',
+    desc: 'Updating custom modules and scripts to the latest Odoo version seamlessly.',
+    tags: 'PYTHON • OWL • UPGRADES',
+    icon: '/services/code_migration.png',
+  },
+  {
+    id: 11,
+    index: '11 / 12',
+    title: 'Data Migration',
+    desc: 'Securely migrating your data with zero downtime and complete accuracy.',
+    tags: 'SECURE • ACCURATE • RELIABLE',
+    icon: '/services/data_migration.png',
+  },
+  {
+    id: 12,
+    index: '12 / 12',
+    title: 'Mobile Application',
+    desc: 'Native and hybrid mobile app development integrated directly into your Odoo ERP.',
+    tags: 'IOS • ANDROID • HYBRID',
+    icon: '/services/mobile_app.png',
   },
 ];
 
-/* Left sticky image/illustration */
-function ServiceVisual({ service }) {
-  return (
-    <div className="services__visual" aria-hidden="true">
-      <div className="services__visual-card">
-        <div className="svc-visual-letter">{service.letter}</div>
-        <div className="svc-visual-label">{service.label}</div>
-        <div className="svc-visual-tags">
-          {service.tags.map((t) => (
-            <span key={t} className="svc-tag">{t}</span>
-          ))}
-        </div>
-        <ul className="svc-visual-bullets">
-          {service.bullets.map((b) => (
-            <li key={b}>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <circle cx="7" cy="7" r="6" stroke="#0075FA" strokeWidth="1.2"/>
-                <path d="M4.5 7l2 2 3-3" stroke="#0075FA" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              {b}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-}
-
 export default function Services() {
-  const [activeRow, setActiveRow] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const timerRef = useRef(null);
+
+  // Preload all 12 service icons on mount for instant rendering
+  useEffect(() => {
+    services.forEach((svc) => {
+      const img = new Image();
+      img.src = svc.icon;
+    });
+  }, []);
+
+  // Continuous auto-rotation every 2 seconds across all 12 services
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (isPaused || prefersReducedMotion) return;
+
+    timerRef.current = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % services.length);
+    }, 2000);
+
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [isPaused]);
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev - 1 + services.length) % services.length);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % services.length);
+  };
+
+  const handleDotClick = (index) => {
+    setCurrentIndex(index);
+  };
+
+  const getCardClass = (index) => {
+    const total = services.length;
+    const diff = (index - currentIndex + total) % total;
+
+    if (diff === 0) return 'service-card--active';
+    if (diff === 1) return 'service-card--right';
+    if (diff === total - 1) return 'service-card--left';
+    return 'service-card--hidden';
+  };
 
   return (
     <section className="services section-white" id="services" aria-label="Services">
       <div className="container services__container">
+        
         {/* Header */}
         <div className="services__header">
-          <div className="eyebrow">What We Do</div>
+          <div className="eyebrow-pill">WHAT WE DO</div>
           <h2 className="services__title">
-            Everything your Odoo ERP
-            <br />project needs, under one roof
+            Our <span className="text-blue-accent">Services</span>
           </h2>
           <p className="services__subtitle">
-            From first consultation to long-term support, we cover every phase
-            of your ERP journey with certified Odoo expertise.
+            Comprehensive Odoo ERP solutions tailored to streamline, integrate, and grow your business.
           </p>
         </div>
 
-        <div className="services__body">
-          {/* Sticky visual */}
-          <div className="services__left">
-            <div className="services__sticky">
-              <ServiceVisual service={services[activeRow]} />
+        {/* Showcase Wrapper */}
+        <div className="services__showcase-wrapper">
+          
+          {/* Ghost Background Heading */}
+          <div className="services__ghost-heading" aria-hidden="true">
+            12 Services. One Odoo Partner.
+          </div>
+
+          {/* Card Stack Container */}
+          <div 
+            className="services__stack-container"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            {/* Prev Arrow */}
+            <button 
+              className="services__nav-btn services__nav-btn--prev"
+              onClick={handlePrev}
+              aria-label="Previous Service"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12" />
+                <polyline points="12 19 5 12 12 5" />
+              </svg>
+            </button>
+
+            {/* 12 Cards Stack */}
+            <div className="services__cards-stage">
+              {services.map((svc, i) => {
+                const cardClass = getCardClass(i);
+                return (
+                  <div
+                    key={svc.id}
+                    className={`service-card ${cardClass}`}
+                    onClick={() => {
+                      if (cardClass.includes('service-card--left')) handlePrev();
+                      if (cardClass.includes('service-card--right')) handleNext();
+                    }}
+                  >
+                    <div className="service-card__top">
+                      <span className="service-card__index">{svc.index}</span>
+                    </div>
+
+                    <div className="service-card__icon-wrap">
+                      <img 
+                        src={svc.icon} 
+                        alt={svc.title} 
+                        className="service-card__icon"
+                        loading="eager"
+                        decoding="async"
+                      />
+                    </div>
+
+                    <div className="service-card__body">
+                      <h3 className="service-card__title">{svc.title}</h3>
+                      <p className="service-card__desc">{svc.desc}</p>
+                      <div className="service-card__tags">{svc.tags}</div>
+                      <a href="#contact" className="service-card__link">
+                        Explore Service <span className="arrow">→</span>
+                      </a>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Next Arrow */}
+            <button 
+              className="services__nav-btn services__nav-btn--next"
+              onClick={handleNext}
+              aria-label="Next Service"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Pagination Dots */}
+          <div className="services__dots" role="tablist">
+            {services.map((svc, i) => (
+              <button
+                key={svc.id}
+                className={`services__dot ${i === currentIndex ? 'services__dot--active' : ''}`}
+                onClick={() => handleDotClick(i)}
+                aria-label={`Go to service ${svc.title}`}
+                role="tab"
+                aria-selected={i === currentIndex}
+              />
+            ))}
+          </div>
+
+          {/* Bottom Trust Badge Bar */}
+          <div className="services__trust-bar">
+            <div className="trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0075FA" strokeWidth="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <span>Certified Odoo Experts</span>
+            </div>
+            <span className="trust-divider">|</span>
+            <div className="trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0075FA" strokeWidth="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              <span>Proven Methodologies</span>
+            </div>
+            <span className="trust-divider">|</span>
+            <div className="trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0075FA" strokeWidth="2">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span>On-Time Delivery</span>
+            </div>
+            <span className="trust-divider">|</span>
+            <div className="trust-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0075FA" strokeWidth="2">
+                <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+              </svg>
+              <span>Long-Term Support</span>
             </div>
           </div>
 
-          {/* List */}
-          <div className="services__right">
-            {services.map((svc, i) => (
-              <div
-                key={svc.letter}
-                id={`service-row-${svc.letter.toLowerCase()}`}
-                className={`svc-row${activeRow === i ? ' svc-row--active' : ''}`}
-                onMouseEnter={() => setActiveRow(i)}
-                onClick={() => setActiveRow(i)}
-              >
-                <div className="svc-row__letter">{svc.letter}</div>
-                <div className="svc-row__content">
-                  <div className="svc-row__header">
-                    <h3 className="svc-row__title">{svc.title}</h3>
-                    <div className="svc-row__tags">
-                      {svc.tags.map((t) => <span key={t} className="svc-tag svc-tag--sm">{t}</span>)}
-                    </div>
-                  </div>
-                  <p className="svc-row__desc">{svc.desc}</p>
-                </div>
-                <div className="svc-row__arrow">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

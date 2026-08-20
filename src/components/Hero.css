@@ -201,7 +201,7 @@
 }
 
 /* ============================================
-   COUNTRY CHIPS & SOCIAL PROOF — ZERO OVERLAP FLEX LAYOUT
+   COUNTRY CHIPS & SOCIAL PROOF
    ============================================ */
 .hero__trust-wrapper {
   display: flex;
@@ -262,121 +262,102 @@
 }
 
 /* ============================================
-   PARTNERS LOGO BAR — WITH 50PX EXTRA BREATHING ROOM
+   STATISTICS CARDS BAR — PREMIUM MINIMAL CARD ROW
    ============================================ */
-.hero__partners {
-  border-top: 1px solid #f1f5f9;
-  border-bottom: 1px solid #f1f5f9;
-  padding: 44px 0 28px;
-  margin-top: 36px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-  position: relative;
-  z-index: 1;
-}
-
-.hero__partners-label {
-  text-align: center;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: #94a3b8;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-}
-
-.hero__partners-logos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 36px;
-  flex-wrap: wrap;
-}
-
-.hero__partner-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: #475569;
-  opacity: 0.75;
-  transition: opacity 0.3s ease;
-}
-
-.hero__partner-item:hover {
-  opacity: 1;
-}
-
-.hero__partner-item small {
-  font-size: 9px;
-  font-weight: 700;
-  color: #94a3b8;
-  display: block;
-}
-
-.hero__partner-more {
-  font-size: 12px;
-  font-weight: 600;
-  color: #94a3b8;
-}
-
-/* STATISTICS CARDS BAR */
 .hero__stats-bar {
   background: #f8fafc;
-  padding: 24px 0;
+  padding: 32px 0;
   position: relative;
-  z-index: 1;
+  z-index: 5;
   border-top: 1px solid #e2e8f0;
 }
 
 .hero__stats-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 22px;
 }
 
 .hero__stat-card {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   background: #ffffff;
   padding: 18px 22px;
-  border-radius: 16px;
+  border-radius: 14px;
   border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.03);
+  transition: all 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Subtle top accent line on hover */
+.hero__stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #0075FF, #38BDF8);
+  opacity: 0;
+  transition: opacity 280ms ease;
 }
 
 .hero__stat-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 117, 255, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 117, 255, 0.12);
   border-color: rgba(0, 117, 255, 0.3);
 }
 
+.hero__stat-card:hover::before {
+  opacity: 1;
+}
+
 .hero__stat-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(0, 117, 255, 0.08);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #EFF6FF;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  color: #0075FF;
+  transition: transform 280ms ease, background-color 280ms ease;
+}
+
+.hero__stat-card:hover .hero__stat-icon {
+  transform: scale(1.08);
+  background: #DBEAFE;
+}
+
+.hero__stat-content {
+  display: flex;
+  flex-direction: column;
 }
 
 .hero__stat-number {
   font-size: 22px;
-  font-weight: 900;
-  color: #0f172a;
-  line-height: 1.1;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  transition: color 280ms ease;
+}
+
+.hero__stat-card:hover .hero__stat-number {
+  color: #0075FF;
 }
 
 .hero__stat-label {
   font-size: 13px;
-  color: #64748b;
-  font-weight: 600;
+  color: #64748B;
+  font-weight: 500;
+  margin-top: 2px;
+  white-space: nowrap;
 }
 
 /* RESPONSIVE LAYOUT */
@@ -402,6 +383,7 @@
   }
   .hero__stats-container {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 }
 
@@ -411,103 +393,19 @@
   }
   .hero__stats-container {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
-  .hero__partners-logos {
-    gap: 20px;
+  .hero__stat-card {
+    padding: 16px 18px;
   }
 }
 
-/* ============================================
-   HERO DARK MODE OVERRIDES
-   ============================================ */
+/* DARK MODE OVERRIDES */
 [data-theme="dark"] .hero {
   background: var(--bg-primary, #0A0D14);
   color: var(--text-primary, #F8FAFC);
 }
 
-[data-theme="dark"] .hero__eyebrow {
-  background: rgba(0, 117, 255, 0.15);
-  border-color: rgba(0, 117, 255, 0.35);
-  color: #38BDF8;
-}
-
-[data-theme="dark"] .hero__title {
-  color: #F8FAFC;
-}
-
-[data-theme="dark"] .hero__description {
-  color: #94A3B8;
-}
-
-[data-theme="dark"] .hero__btn--secondary {
-  background: #161C2A;
-  color: #F8FAFC;
-  border-color: rgba(255, 255, 255, 0.15);
-}
-
-[data-theme="dark"] .hero__btn--secondary:hover {
-  border-color: #0075FF;
-  color: #38BDF8;
-  background: #1F273B;
-}
-
-[data-theme="dark"] .hero__btn-icon--outline {
-  background: rgba(0, 117, 255, 0.2);
-}
-
-[data-theme="dark"] .hero__country-chip {
-  background: #161C2A;
-  border-color: rgba(255, 255, 255, 0.1);
-  color: #CBD5E1;
-}
-
-[data-theme="dark"] .hero__country-chip:hover {
-  background: #1F273B;
-  border-color: #0075FF;
-  color: #38BDF8;
-}
-
-[data-theme="dark"] .hero__trust-sub {
-  color: #94A3B8;
-}
-
-[data-theme="dark"] .hero__trust-sub strong {
-  color: #F8FAFC;
-}
-
-/* Partners & Trusted Manufacturers Section Dark Mode */
-[data-theme="dark"] .hero__partners {
-  background: var(--bg-primary, #0D0F14);
-  border-top-color: rgba(255, 255, 255, 0.08);
-  border-bottom-color: rgba(255, 255, 255, 0.08);
-}
-
-[data-theme="dark"] .hero__partners-label {
-  color: #38BDF8;
-}
-
-[data-theme="dark"] .hero__partner-item {
-  color: #E2E8F0;
-  opacity: 0.85;
-}
-
-[data-theme="dark"] .hero__partner-item:hover {
-  opacity: 1;
-}
-
-[data-theme="dark"] .hero__partner-item svg {
-  fill: #94A3B8;
-}
-
-[data-theme="dark"] .hero__partner-item small {
-  color: #94A3B8;
-}
-
-[data-theme="dark"] .hero__partner-more {
-  color: #94A3B8;
-}
-
-/* Hero Stats Bar Dark Mode */
 [data-theme="dark"] .hero__stats-bar {
   background: #111520;
   border-top-color: rgba(255, 255, 255, 0.08);
@@ -521,7 +419,7 @@
 
 [data-theme="dark"] .hero__stat-card:hover {
   border-color: rgba(0, 117, 255, 0.4);
-  box-shadow: 0 10px 25px rgba(0, 117, 255, 0.25);
+  box-shadow: 0 10px 24px rgba(0, 117, 255, 0.25);
 }
 
 [data-theme="dark"] .hero__stat-icon {

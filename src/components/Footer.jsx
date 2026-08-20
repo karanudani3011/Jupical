@@ -1,40 +1,14 @@
 import { useState } from 'react';
 import './Footer.css';
 
-const footerLinks = {
-  Product: [
-    { label: 'Odoo Implementation', href: '#services' },
-    { label: 'Odoo Customisation', href: '#services' },
-    { label: 'Odoo Integration', href: '#services' },
-    { label: 'Odoo Migration', href: '#services' },
-    { label: 'Odoo Support', href: '#services' },
-    { label: 'Odoo Training', href: '#services' },
-  ],
-  Resources: [
-    { label: 'Blog', href: 'https://www.jupical.io/blogs' },
-    { label: 'Case Studies', href: 'https://www.jupical.io/case-studies' },
-    { label: 'Success Stories', href: 'https://www.jupical.io/success-stories-videos' },
-    { label: 'Why Jupical', href: 'https://www.jupical.io/why-jupical' },
-    { label: 'About Us', href: 'https://www.jupical.io/about-us' },
-    { label: 'Our Clients', href: 'https://www.jupical.io/our-clients' },
-  ],
-  Legal: [
-    { label: 'Privacy Policy', href: '#' },
-    { label: 'Cookie Policy', href: 'https://www.jupical.io/cookie-policy' },
-    { label: 'Terms of Service', href: '#' },
-    { label: 'GDPR Compliance', href: '#' },
-    { label: 'Sitemap', href: '#' },
-  ],
-};
-
 const socialLinks = [
   {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/company/jupical-technologies/',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
-        <circle cx="4" cy="4" r="2"/>
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+        <circle cx="4" cy="4" r="2" />
       </svg>
     ),
   },
@@ -43,7 +17,7 @@ const socialLinks = [
     href: 'https://twitter.com/jupical',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
       </svg>
     ),
   },
@@ -52,7 +26,7 @@ const socialLinks = [
     href: 'https://www.youtube.com/@jupicaltechnologies',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.3.8C6.8 19 12 19 12 19s4.8 0 7-.2c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z"/>
+        <path d="M21.8 8s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16.8 5 12 5 12 5s-4.8 0-7 .1c-.4.1-1.2.1-2 .9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.8.8 2.3.8C6.8 19 12 19 12 19s4.8 0 7-.2c.4-.1 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM9.7 14.5V9l5.4 2.8-5.4 2.7z" />
       </svg>
     ),
   },
@@ -87,8 +61,8 @@ export default function Footer() {
             {submitted ? (
               <div className="footer__subscribed">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <circle cx="10" cy="10" r="9" stroke="#22c55e" strokeWidth="1.5"/>
-                  <path d="M6 10l3 3 5-5" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="10" cy="10" r="9" stroke="#22c55e" strokeWidth="1.5" />
+                  <path d="M6 10l3 3 5-5" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 You're subscribed! We'll be in touch.
               </div>
@@ -113,54 +87,33 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Links grid */}
+      {/* Clean Brand section */}
       <div className="footer__links-section">
-        <div className="container footer__links-container">
-          {/* Brand */}
-          <div className="footer__brand">
+        <div className="container footer__brand-container">
+          <div className="footer__brand-clean">
             <div className="footer__logo">
               <img src="/footer-logo.png" alt="Jupical Technologies Logo" className="footer__logo-img" />
             </div>
             <p className="footer__brand-desc">
-              Certified Odoo ERP Partner headquartered in Rajkot, India.
-              Delivering manufacturing automation across 32+ countries since 2016.
+              Jupical is a Certified Odoo ERP Partner specializing in manufacturing, finance, and enterprise digital transformation. Through expert ERP implementation and offshore development services, we deliver precision-built solutions that streamline operations, eliminate inefficiencies, and position businesses for long term growth across 32+ countries and counting.
             </p>
-            <div className="footer__social">
-              {socialLinks.map((s) => (
-                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
-                  id={`footer-social-${s.label.toLowerCase().replace(/\//g,'-')}`}
-                  className="footer__social-link" aria-label={s.label}>
-                  {s.icon}
-                </a>
-              ))}
-            </div>
-            <div className="footer__contact-info">
-              <a href="mailto:info@jupical.io" className="footer__contact-link">info@jupical.io</a>
-              <a href="tel:+919327155568" className="footer__contact-link">+91 93271 55568</a>
+            <div className="footer__brand-bottom">
+              <div className="footer__social">
+                {socialLinks.map((s) => (
+                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
+                    id={`footer-social-${s.label.toLowerCase().replace(/\//g, '-')}`}
+                    className="footer__social-link" aria-label={s.label}>
+                    {s.icon}
+                  </a>
+                ))}
+              </div>
+              <div className="footer__contact-info">
+                <a href="mailto:info@jupical.io" className="footer__contact-link">info@jupical.io</a>
+                <span className="contact-divider">•</span>
+                <a href="tel:+919327155568" className="footer__contact-link">+91 93271 55568</a>
+              </div>
             </div>
           </div>
-
-          {/* Link columns */}
-          {Object.entries(footerLinks).map(([col, links]) => (
-            <div key={col} className="footer__col">
-              <h4 className="footer__col-heading">{col}</h4>
-              <ul className="footer__col-links">
-                {links.map((l) => (
-                  <li key={l.label}>
-                    <a
-                      href={l.href}
-                      id={`footer-link-${l.label.toLowerCase().replace(/\s/g, '-')}`}
-                      className="footer__link underline-link"
-                      target={l.href.startsWith('http') ? '_blank' : undefined}
-                      rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    >
-                      {l.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
         </div>
       </div>
 
@@ -168,14 +121,9 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="container footer__bottom-inner">
           <span>© {new Date().getFullYear()} Jupical Technologies Pvt. Ltd. All rights reserved.</span>
-          <div className="footer__bottom-links">
-            <a href="#" className="footer__link">Privacy</a>
-            <a href="https://www.jupical.io/cookie-policy" className="footer__link">Cookies</a>
-            <a href="#" className="footer__link">Terms</a>
-          </div>
           <span className="footer__odoo-badge">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <circle cx="6" cy="6" r="5" fill="#875A7B"/>
+              <circle cx="6" cy="6" r="5" fill="#875A7B" />
             </svg>
             Powered by Odoo
           </span>

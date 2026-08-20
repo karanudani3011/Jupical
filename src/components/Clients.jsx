@@ -1,163 +1,97 @@
 import './Clients.css';
 
-const clients = [
-  {
-    name: 'Apex Metals',
-    sector: 'Manufacturing',
-    quote: 'Jupical cut our month-end close from 6 days to 1. Odoo is now the backbone of everything we do.',
-    person: 'Rahul M., CFO',
-    initials: 'AM',
-    color: '#0075FA',
-  },
-  {
-    name: 'Gujarat Forge',
-    sector: 'Auto Components',
-    quote: 'Production visibility went from zero to real-time. Our OEE jumped 18 points in the first quarter.',
-    person: 'Disha P., VP Operations',
-    initials: 'GF',
-    color: '#7c3aed',
-  },
-  {
-    name: 'Pinnacle Mfg',
-    sector: 'FMCG',
-    quote: 'We went live in 8 weeks. Jupical\'s team was hands-on throughout and the hypercare was exceptional.',
-    person: 'Ankit S., MD',
-    initials: 'PM',
-    color: '#0891b2',
-  },
-  {
-    name: 'HiTech Parts',
-    sector: 'Engineering',
-    quote: 'Multi-site, multi-currency, multi-language — Odoo handles it all. We\'ve scaled to 3 new countries.',
-    person: 'Fatima R., IT Director',
-    initials: 'HP',
-    color: '#059669',
-  },
-  {
-    name: 'StructureBuild',
-    sector: 'Construction',
-    quote: 'Material tracking in construction used to be a nightmare. Odoo\'s lot traceability changed everything.',
-    person: 'Vikram C., Site Director',
-    initials: 'SB',
-    color: '#d97706',
-  },
-  {
-    name: 'MedCore Labs',
-    sector: 'Healthcare',
-    quote: 'Batch recall readiness dropped from 3 days to 20 minutes. Regulatory compliance is now effortless.',
-    person: 'Dr. Neha T., QA Head',
-    initials: 'MC',
-    color: '#dc2626',
-  },
-  {
-    name: 'TradeBridge',
-    sector: 'Distribution',
-    quote: 'Inventory accuracy went from 78% to 99.4%. Dead stock reduced by ₹80L in the first year.',
-    person: 'Sanjay B., COO',
-    initials: 'TB',
-    color: '#0075FA',
-  },
-  {
-    name: 'EduNexus',
-    sector: 'Education',
-    quote: 'Odoo unified admissions, fees, payroll, and academics. We retired 4 legacy systems overnight.',
-    person: 'Priya K., Principal',
-    initials: 'EN',
-    color: '#7c3aed',
-  },
-  {
-    name: 'GrandStay Hotels',
-    sector: 'Hospitality',
-    quote: 'Front desk, housekeeping, F&B, accounting — one screen. Guest satisfaction up 31%.',
-    person: 'Amir H., GM',
-    initials: 'GS',
-    color: '#059669',
-  },
-  {
-    name: 'FinEdge Capital',
-    sector: 'Finance',
-    quote: 'Loan lifecycle management fully automated. NPAs identified 60% faster with real-time dashboards.',
-    person: 'Rina M., CTO',
-    initials: 'FC',
-    color: '#d97706',
-  },
-  {
-    name: 'ProPlex Realty',
-    sector: 'Real Estate',
-    quote: 'Property management, tenant billing, and maintenance tickets — all on one platform. Transformed.',
-    person: 'Manish G., Director',
-    initials: 'PR',
-    color: '#0891b2',
-  },
-  {
-    name: 'SwiftCargo',
-    sector: 'Logistics',
-    quote: 'Fleet, trips, invoicing, driver payroll — Jupical implemented it all in under 10 weeks.',
-    person: 'Tejas V., Founder',
-    initials: 'SC',
-    color: '#dc2626',
-  },
+// The EXACT 27 Client Logos extracted from the reference sheet
+const allClients = [
+  { name: 'Luxuria', src: '/clients/luxuria.png', label: 'Luxuria' },
+  { name: 'PROCOM', src: '/clients/procom.png', label: 'Procom' },
+  { name: 'POWERPACE', src: '/clients/powerpace.png', label: 'Powerpace' },
+  { name: 'Millennium', src: '/clients/millennium.png', label: 'Millennium' },
+  { name: 'Travenza', src: '/clients/travenza.png', label: 'Travenza' },
+  { name: 'SRN Integrated', src: '/clients/srn_integrated.png', label: 'SRN Integrated' },
+  { name: 'Heben Cranes', src: '/clients/heben.png', label: 'Heben Cranes' },
+  { name: 'RotoRiko', src: '/clients/rotoriko.png', label: 'RotoRiko' },
+  { name: 'SRP', src: '/clients/srp.png', label: 'SRP' },
+  { name: 'ALLFOLD', src: '/clients/allfold.png', label: 'Allfold' },
+  { name: 'Antra', src: '/clients/antra.png', label: 'Antra' },
+  { name: 'Emblem', src: '/clients/emblem.png', label: 'Emblem' },
+  { name: 'Green Hexagon', src: '/clients/green_hexagon.png', label: 'Green Hexagon' },
+  { name: 'Shiksha Guru', src: '/clients/shiksha_guru.png', label: 'Shiksha Guru' },
+  { name: 'Brixton', src: '/clients/brixton.png', label: 'Brixton' },
+  { name: 'Indus Aushadhi', src: '/clients/indus.png', label: 'Indus' },
+  { name: 'CitaGlobal', src: '/clients/citaglobal.png', label: 'CitaGlobal' },
+  { name: 'IFSB', src: '/clients/ifsb.png', label: 'IFSB' },
+  { name: 'H Logo', src: '/clients/h_logo.png', label: 'H Logo' },
+  { name: 'IndiaFinds', src: '/clients/indiafinds.png', label: 'IndiaFinds' },
+  { name: 'Shivansh', src: '/clients/shivansh.png', label: 'Shivansh' },
+  { name: 'Baldertech', src: '/clients/baldertech.png', label: 'Baldertech' },
+  { name: 'Ehsaas', src: '/clients/ehsaas.png', label: 'Ehsaas' },
+  { name: 'MIT-MUT', src: '/clients/mit_mut.png', label: 'MIT-MUT' },
+  { name: '42Gears', src: '/clients/gears42.png', label: '42Gears' },
+  { name: 'eTeki', src: '/clients/eteki.png', label: 'eTeki' },
+  { name: 'Crest', src: '/clients/crest.png', label: 'Crest' },
 ];
 
-function ClientCard({ client, index }) {
-  return (
-    <div
-      className="client-card"
-      id={`client-card-${index}`}
-      style={{ '--c': client.color }}
-      title={`Hover to hear from ${client.name}`}
-    >
-      {/* Logo area */}
-      <div className="client-card__logo">
-        <div className="client-card__initials" style={{ background: client.color }}>
-          {client.initials}
-        </div>
-        <div className="client-card__meta">
-          <span className="client-card__name">{client.name}</span>
-          <span className="client-card__sector">{client.sector}</span>
-        </div>
-      </div>
-
-      {/* Quote — reveals on hover */}
-      <div className="client-card__quote">
-        <p>"{client.quote}"</p>
-        <span className="client-card__person">— {client.person}</span>
-      </div>
-
-      <div className="client-card__hover-hint">hover to hear from the team →</div>
-    </div>
-  );
-}
+const marqueeClients = [...allClients, ...allClients];
 
 export default function Clients() {
   return (
-    <section className="clients section-white" id="clients" aria-label="Trusted clients">
-      <div className="container">
+    <section className="clients section-white" id="clients" aria-label="Our Clients">
+      <div className="container clients__header-container">
+        {/* Header */}
         <div className="clients__header">
-          <div className="eyebrow">Trusted by Teams Worldwide</div>
+          <div className="eyebrow-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0075FA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+            <span>OUR CLIENTS</span>
+          </div>
+
           <h2 className="clients__title">
-            Manufacturers and businesses that
-            <br />chose Odoo with Jupical
+            Trusted by <span className="text-blue-accent">Leading Brands</span> Worldwide
           </h2>
           <p className="clients__sub">
-            From single-plant manufacturers to multi-country conglomerates — across 12+ industries.
+            We are proud to partner with innovative companies delivering excellence across the globe.
           </p>
         </div>
+      </div>
 
-        <div className="clients__grid">
-          {clients.map((c, i) => <ClientCard key={c.name} client={c} index={i} />)}
+      {/* Main Continuous Marquee Showcase */}
+      <div className="clients__showcase-stage">
+        {/* Left Arrow */}
+        <button className="clients__arrow-btn clients__arrow-btn--left" aria-label="Previous Clients">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0075FA" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+
+        {/* Continuous Horizontal Marquee Container */}
+        <div className="clients__marquee-container">
+          <div className="clients__marquee-track">
+            {marqueeClients.map((client, idx) => (
+              <div key={`${client.name}-${idx}`} className="clients__item">
+                <div className="clients__card" title={client.name}>
+                  <img 
+                    src={client.src} 
+                    alt={client.name} 
+                    className="clients__card-img" 
+                    loading="eager"
+                  />
+                </div>
+                <span className="clients__company-name">{client.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="clients__cta">
-          <a href="https://www.jupical.io/our-clients" target="_blank" rel="noopener noreferrer"
-            id="clients-view-all-btn" className="btn-primary">
-            View All Case Studies
-          </a>
-          <a href="https://www.jupical.io/success-stories-videos" target="_blank" rel="noopener noreferrer"
-            id="clients-stories-btn" className="btn-secondary">
-            Watch Success Stories
-          </a>
-        </div>
+        {/* Right Arrow */}
+        <button className="clients__arrow-btn clients__arrow-btn--right" aria-label="Next Clients">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0075FA" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
       </div>
     </section>
   );

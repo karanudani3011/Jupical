@@ -1,81 +1,152 @@
 /* ============================================
-   STATS STYLES
+   STATISTICS SECTION — MODERN MINIMAL CARD ROW
    ============================================ */
 
-.stats {
-  padding: var(--section-pad) 0;
+.stats-section {
+  background: #F8FAFC;
+  padding: 36px 0;
+  position: relative;
+  z-index: 5;
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
 }
 
-.stats__header {
-  text-align: center;
-  margin-bottom: 56px;
-}
-
-.stats__title {
-  font-size: clamp(1.7rem, 3vw, 2.4rem);
-  font-weight: 800;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  color: var(--text-primary);
-  margin-top: 8px;
-}
-
-.stats__grid {
+.stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  align-items: center;
 }
 
 .stat-card {
-  background: var(--bg-primary);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 28px 24px;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  transition: var(--transition);
-  cursor: default;
-  animation: fadeInUp 0.5s ease both;
-  animation-delay: calc(var(--i) * 0.08s);
+  align-items: center;
+  gap: 14px;
+  background: #FFFFFF;
+  padding: 18px 22px;
+  border-radius: 14px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.03);
+  transition: all 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Subtle top accent line on hover */
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #0075FF, #38BDF8);
+  opacity: 0;
+  transition: opacity 280ms ease;
 }
 
 .stat-card:hover {
-  border-color: var(--brand-blue);
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-md), 0 0 0 1px var(--brand-blue);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 117, 255, 0.12);
+  border-color: rgba(0, 117, 255, 0.3);
 }
 
-.stat-card__icon {
-  font-size: 28px;
-  margin-bottom: 4px;
-  line-height: 1;
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+/* Small Circular/Rounded Icon Badge */
+.stat-card__badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #EFF6FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #0075FF;
+  transition: transform 280ms ease, background-color 280ms ease;
+}
+
+.stat-card:hover .stat-card__badge {
+  transform: scale(1.08);
+  background: #DBEAFE;
+}
+
+.stat-card__content {
+  display: flex;
+  flex-direction: column;
 }
 
 .stat-card__value {
-  font-size: 2.6rem;
-  font-weight: 900;
-  color: var(--brand-blue);
-  letter-spacing: -0.03em;
-  line-height: 1;
+  font-size: 22px;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  transition: color 280ms ease;
+}
+
+.stat-card:hover .stat-card__value {
+  color: #0075FF;
 }
 
 .stat-card__label {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.stat-card__desc {
   font-size: 13px;
-  color: var(--text-secondary);
-  line-height: 1.5;
+  color: #64748B;
+  font-weight: 500;
+  margin-top: 2px;
+  white-space: nowrap;
 }
 
-@media (max-width: 900px) {
-  .stats__grid { grid-template-columns: repeat(2, 1fr); }
+/* Responsive Grid */
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
 }
 
-@media (max-width: 520px) {
-  .stats__grid { grid-template-columns: 1fr; }
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .stat-card {
+    padding: 16px 18px;
+  }
+  .stat-card__value {
+    font-size: 20px;
+  }
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] .stats-section {
+  background: #0B0E14;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .stat-card {
+  background: #141923;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .stat-card:hover {
+  border-color: rgba(0, 117, 255, 0.4);
+  box-shadow: 0 10px 24px rgba(0, 117, 255, 0.2);
+}
+
+[data-theme="dark"] .stat-card__badge {
+  background: rgba(0, 117, 255, 0.16);
+}
+
+[data-theme="dark"] .stat-card__value {
+  color: #F8FAFC;
+}
+
+[data-theme="dark"] .stat-card__label {
+  color: #94A3B8;
 }

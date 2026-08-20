@@ -16,8 +16,8 @@ function App() {
       <main id="main-content">
         <Hero />
         <Stats />
-        <CompanySection />
         <Services />
+        <CompanySection />
         <BeforeAfter />
         <Clients />
       </main>
